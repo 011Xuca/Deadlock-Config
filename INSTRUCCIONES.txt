@@ -1,0 +1,86 @@
+DEADLOCK CONFIG
+=====================
+
+Que trae
+--------
+- autoexec.cfg            FPS sin limite, menos retraso y texturas mas livianas.
+- parametros-steam.txt    Las opciones de inicio para Steam.
+- Mod de optimizacion     gameinfo.gi de OptimizationLock (se baja aparte, ver paso 3).
+- imagenes\               Captura de las opciones de video.
+
+
+1) Poner el autoexec
+--------------------
+- En Steam, clic derecho en Deadlock > Administrar > Explorar archivos locales.
+- Entra a:  game > citadel > cfg
+  La ruta completa es:  Deadlock\game\citadel\cfg
+  (si Steam esta en el disco C, por defecto es:
+   C:\Program Files (x86)\Steam\steamapps\common\Deadlock\game\citadel\cfg)
+- Copia ahi autoexec.cfg (si te pregunta, reemplazalo).
+
+
+2) Opciones de inicio de Steam
+------------------------------
+- En Steam, clic derecho en Deadlock > Propiedades > General.
+- En "Opciones de lanzamiento" pega lo que esta en parametros-steam.txt:
+
+    -high +exec autoexec.cfg
+
+  -high                 Le da prioridad alta al juego en el procesador.
+  +exec autoexec.cfg    Carga esta config cada vez que abris el juego.
+
+
+3) Mod de optimizacion (gameinfo.gi)
+------------------------------------
+- Bajalo de aca:  https://gamebanana.com/mods/656341
+- Trae varios niveles. Elegi uno solo:
+    Sqooky's Config / OptimizationLock   El recomendado: mas FPS sin que se vea tan feo.
+    Boot's Max FPS                       Todavia mas FPS, se ve peor.
+    Kaizuchaneru's Minimum Spec          Para PCs muy flojas: maximo FPS, se ve muy feo.
+    Test_Cfg                             De prueba: puede andar mejor pero dar errores.
+- Copia el gameinfo.gi que elegiste en:  Deadlock\game\citadel
+  (por defecto: C:\Program Files (x86)\Steam\steamapps\common\Deadlock\game\citadel)
+- Te va a preguntar si queres reemplazarlo: decile que si.
+
+
+4) Opciones dentro del juego (estan en la carpeta imagenes)
+-----------------------------------------------------------
+VIDEO > Rendimiento (video-1.png)
+- Ajustes avanzados: activado
+- Tecnologia de mejora: NVIDIA DLSS (si tu placa no es NVIDIA: FSR2)
+- Modo de escala: x2 | Modelo DLSS: CNN
+- OA (espacio de la pantalla): No
+- Sombras: Baja | Niebla: Baja | Texturas: Baja
+- Resplandor de posprocesado, Resplandor de efectos, Sincronizacion vertical,
+  Luces de area y Profundidad de campo: desactivados
+
+VIDEO > Opciones
+- Renderizado: Direct3D 11 (-dx11)
+- NVIDIA Reflex: Activada con potenciador
+- Minimizar al cambiar de aplicacion: desactivado
+
+
+5) Comprobar que anda
+---------------------
+- Abri el juego y la consola (tecla F7; si no abre, activala en Opciones > Juego).
+- Tiene que aparecer: Config de 011Xuca cargada
+- Si no aparece, escribi en la consola:  exec autoexec
+
+
+Para tener en cuenta
+--------------------
+- Cada actualizacion grande del juego pisa el gameinfo.gi: despues de actualizar
+  lo tenes que volver a copiar (paso 3).
+- Si el mapa se ve muy oscuro con el mod, baja las sombras a Medio o Bajo.
+- Valve agrego un aviso que bloquea el matchmaking en grupo si alguien tiene
+  ConVars cambiadas. Hoy casi no se aplica, pero si te bloquea la partida,
+  volve al original: Steam > clic derecho en Deadlock > Propiedades >
+  Archivos instalados > Verificar integridad de los archivos.
+- engine_low_latency_sleep_after_client_tick viene en 0. Si sentis el juego raro,
+  proba con 1 y quedate con el que te ande mejor.
+
+Creditos
+--------
+Hecho por 011Xuca
+Redes: https://linktr.ee/011xuca
+Mod de optimizacion: OptimizationLock, de Sqooky (gamebanana.com/mods/656341)
